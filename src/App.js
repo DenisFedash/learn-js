@@ -55,7 +55,34 @@ function App() {
   // function createPhoneNumber(numbers) {
   //   return numbers.join("").replace(/(...)(...)(.*)/, "($1) $2-$3");
   // }
-  console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+  // console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+
+  function validBraces(braces) {
+    while (/\(\)|\[\]|\{\}/g.test(braces)) {
+      braces = braces.replace(/\(\)|\[\]|\{\}/g, "");
+    }
+    return !braces.length;
+  }
+
+  function findOutlier(integers) {
+    let iterateArray = integers.filter((elem) => elem % 2 !== 0);
+    let nonIterateArray = integers.filter((elem) => elem % 2 === 0);
+    return iterateArray.length === 1 ? iterateArray[0] : nonIterateArray[0];
+  }
+  // console.log(findOutlier([0, 1, 2]));
+
+  function findUniq(arr) {
+    arr = arr.sort();
+    console.log(arr);
+
+    if (arr[1] === arr[0]) {
+      return arr[arr.length - 1];
+    }
+    return arr[0];
+  }
+
+  console.log(findUniq([0, 1, 1, 1, 1]));
+  console.log(findUniq([0, 5, 0, 0, 0]));
 }
 
 export default App;
