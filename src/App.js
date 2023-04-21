@@ -81,8 +81,21 @@ function App() {
     return arr[0];
   }
 
-  console.log(findUniq([0, 1, 1, 1, 1]));
-  console.log(findUniq([0, 5, 0, 0, 0]));
+  // console.log(findUniq([0, 1, 1, 1, 1]));
+  // console.log(findUniq([0, 5, 0, 0, 0]));
+
+  function digitize(n) {
+    const arr = Array.from(arguments);
+    return arr.split("").reverse();
+  }
+
+  // console.log(digitize(35231));
+
+  function betterThanAverage(classPoints, yourPoints) {
+    return (
+      yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length
+    );
+  }
 }
 
 export default App;
