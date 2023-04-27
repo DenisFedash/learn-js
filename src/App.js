@@ -96,6 +96,46 @@ function App() {
       yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length
     );
   }
+
+  function solution(str) {
+    const arr = str.split(/.S{2}/g);
+    return arr;
+  }
+
+  // function solution(str) {
+  //   if (str.length === 0) {
+  //     return [];
+  //   }
+
+  //   return (str.length % 2 ? str + "_" : str).match(/../g);
+  // }
+
+  // console.log(solution("abcdef"));
+
+  function rgb(r, g, b) {
+    const value = (arg) => {
+      if (arg <= 0) return 0;
+      if (arg > 255) return 255;
+
+      return arg;
+    };
+    const hex = (arg) => {
+      console.log(arg.toString(16).toUpperCase());
+      const hexValue = arg.toString(16).toUpperCase();
+      if (hexValue.toString().length === 1) {
+        return "0" + hexValue;
+      }
+      return hexValue;
+    };
+
+    return hex(value(r)) + hex(value(g)) + hex(value(b));
+  }
+  // console.log(rgb(0, 0, 0));
+  // console.log(rgb(0, 0, -20));
+  // console.log(rgb(300, 255, 255));
+  // console.log(rgb(173, 255, 47));
+  console.log(rgb(69, 94, 12)); // '455E0C'
+  console.log(rgb(15, 79, 191));
 }
 
 export default App;
